@@ -22,27 +22,29 @@ namespace Uno.AppLoader.MonoMac
 
         public void Initialize()
         {
-            _dpi = InternalGetDensity ();
+            _dpi = InternalGetDensity();
             _clientSize = InternalGetClientSize();
 
-            _view.Resize += (object s, EventArgs a) => 
-            { 
-                _clientSize = InternalGetClientSize(); 
+            _view.Resize += (object s, EventArgs a) =>
+            {
+                _clientSize = InternalGetClientSize();
                 Bootstrapper.OnWindowSizeChanged(this);
             };
 
-            _view.Window.DidChangeScreen += (object s, EventArgs a) => 
-            { 
-                _dpi = InternalGetDensity(); 
-                //_view.SwapBuffers(); //Update(); 
-                Bootstrapper.OnWindowSizeChanged(this); // it's a hack. but everything is a hack around here.
-                _view.Size = new Size(13,37); // omg, this was the only way i made the window not flicker after being moved to a new screen.. no idea why it works, also, it doesnt seem to affect the actual view size :p
+            _view.Window.DidChangeScreen += (object s, EventArgs a) =>
+            {
+                _dpi = InternalGetDensity();
+                Bootstrapper.OnWindowSizeChanged(this);
+                // this was the only way i made the window not flicker after
+                // being moved to a new screen.. no idea why it works, also, it
+                // doesn't seem to affect the actual view size.
+                _view.Size = new Size(13,37);
             };
         }
 
         Int2 InternalGetClientSize()
         {
-            return new Int2 ((int)(_view.Bounds.Width * GetDensity ()), (int)(_view.Bounds.Height * GetDensity ()));
+            return new Int2 ((int)(_view.Bounds.Width * GetDensity()), (int)(_view.Bounds.Height * GetDensity()));
         }
 
         float InternalGetDensity()
