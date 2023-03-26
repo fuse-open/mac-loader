@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0-macOS</TargetFramework>
     <RootNamespace>Uno.AppLoader</RootNamespace>
-    <AssemblyName>uno-app</AssemblyName>
+    <AssemblyName>uno-app-loader</AssemblyName>
     <OutputType>Exe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ApplicationId>com.fuseopen.unomac</ApplicationId>
@@ -24,6 +24,7 @@
   <ItemGroup>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.1" />
     <PackageReference Include="OpenTK.macOS" Version="1.0.0" />
+    <PackageReference Include="plist-cil" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnoCore">

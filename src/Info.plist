@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>Uno App</string>
+	<string>Uno App Loader</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.fuseopen.unomac</string>
 	<key>CFBundleShortVersionString</key>
@@ -24,5 +24,11 @@
 	<string>© Fuse Open</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UATitle</key>
+	<string>Uno App Loader</string>
+	<key>UAAssembly</key>
+	<string></string>
+	<key>UAMainClass</key>
+	<string></string>
 </dict>
 </plist>

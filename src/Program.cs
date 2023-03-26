@@ -46,12 +46,6 @@ namespace Uno.AppLoader
             Console.Error.WriteLine("The application has crashed because of an unhandled exception:\n\n" + e.ExceptionObject);
             Environment.Exit(1);
         }
-
-        internal static void UnoGenerated()
-        {
-            // Uno compiler will replace this.
-            new DummyUnoApp();
-        }
     }
 
     [SupportedOSPlatform("macOS10.14")]

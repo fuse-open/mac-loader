@@ -21,28 +21,20 @@ namespace Uno.AppLoader
             var windowStyle = NSWindowStyle.Titled | NSWindowStyle.Resizable | NSWindowStyle.Miniaturizable | NSWindowStyle.Closable;
 
             _control = new UnoGLView(initialWindowSize);
-            _window = new NSWindow (
-                initialWindowSize,
-                windowStyle,
-                NSBackingStore.Buffered,
-                false) {
-                Title = GetAssemblyTitle(),
+            _window = new NSWindow(initialWindowSize,
+                                   windowStyle,
+                                   NSBackingStore.Buffered,
+                                   false)
+            {
                 ContentView = _control
             };
 
-            _window.MakeKeyAndOrderFront (_control);
+            _window.MakeKeyAndOrderFront(_control);
             _control.Initialize();
 
-            Program.UnoGenerated();
+            UnoAppLoader.Load();
             DotNetApplication.Start();
             _control.Run(60.0);
-        }
-
-        string GetAssemblyTitle()
-        {
-            return (string) typeof(AppDelegate).Assembly.CustomAttributes
-                .First(a => a.AttributeType.Name == "AssemblyTitleAttribute")
-                .ConstructorArguments.First().Value;
         }
     }
 }

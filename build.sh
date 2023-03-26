@@ -1,6 +1,7 @@
 #!/bin/bash
+set -e
 
-SRC="src/bin/Release/net6.0-macos/osx-x64/uno-app.app"
+SRC="src/bin/Release/net6.0-macos/osx-x64/uno-app-loader.app"
 DST="x64"
 
 dotnet build --configuration Release uno-mac.sln
