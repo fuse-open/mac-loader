@@ -8,6 +8,7 @@ dotnet build --configuration Release uno-mac.sln
 
 rm -rf $DST
 mkdir -p $DST
-
 cp -R $SRC $DST
-du -h $DST
+
+nuget pack -NoPackageAnalysis uno-mac-loader-x64.nuspec
+du -h uno-mac-loader-x64.*.nupkg

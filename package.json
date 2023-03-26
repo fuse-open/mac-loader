@@ -1,34 +1,10 @@
 {
-  "name": "@fuse-open/mac-binaries",
-  "version": "3.0.0-beta.0",
-  "description": "Uno App Runtime for .NET 6.0 (macOS binaries)",
+  "name": "@fuse-open/mac-loader",
+  "private": true,
   "devDependencies": {
     "@fuse-open/uno": "^3.0.0-beta.3"
   },
   "scripts": {
-    "build": "bash build.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "files": [
-    "x64/*"
-  ],
-  "os": [
-    "darwin"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fuse-open/mac-binaries.git"
-  },
-  "keywords": [
-    "uno",
-    "dotnet",
-    "macos",
-    "binaries"
-  ],
-  "author": "Fuse Open",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/fuse-open/mac-binaries/issues"
-  },
-  "homepage": "https://github.com/fuse-open/mac-binaries#readme"
+    "build": "bash build.sh"
+  }
 }

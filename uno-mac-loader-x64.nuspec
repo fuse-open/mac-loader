@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>uno-mac-loader-x64</id>
+    <version>3.0.0-beta.0</version>
+    <authors>Fuse Open</authors>
+    <owners>Fuse Open</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/fuse-open/mac-loader/</projectUrl>
+    <description>Uno App Loader for .NET 6.0 (macOS binaries)</description>
+    <copyright>Copyright 2023</copyright>
+  </metadata>
+  <files>
+    <file src="x64\**\*" target="." />
+  </files>
+</package>
