@@ -1,5 +1,7 @@
 # uno-mac
 
+[![NuGet](https://img.shields.io/nuget/v/uno-mac-loader-x64.svg?style=flat-square)](https://www.nuget.org/packages/uno-mac-loader-x64)
+
 Uno App Loader for .NET 6.0 (macOS binaries)
 
 ## Building from source
