@@ -12,9 +12,8 @@ Uno App Loader for .NET 6.0 (macOS binaries)
 sudo dotnet workload install macos
 ```
 
-2. Install dependencies and build
+2. Build macOS app and NuGet package
 
 ```shell
-npm install
-npm run build
+./build.sh
 ```

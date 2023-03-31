@@ -1,5 +1,4 @@
 /.vs/
-/node_modules/
 /src/bin/
 /src/obj/
 /x64/
