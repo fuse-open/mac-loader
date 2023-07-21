@@ -40,4 +40,3 @@ namespace Uno.AppLoader.MonoMac
         }
     }
 }
-

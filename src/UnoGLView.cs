@@ -290,6 +290,7 @@ namespace Uno.AppLoader.MonoMac
         {
             return new Int2 ((int)(p.X * _unoWindow.GetDensity()), (int)((Size.Height - p.Y) * _unoWindow.GetDensity()));
         }
+
         [Preserve(Conditional=true)]
         public override void LockFocus()
         {

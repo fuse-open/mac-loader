@@ -28,9 +28,7 @@ namespace Uno.AppLoader
             {
                 NSApplication.Init();
                 var application = NSApplication.SharedApplication;
-                
-                var app = new AppDelegate();
-                application.Delegate = app;
+                application.Delegate = new AppDelegate();
                 application.Run();
                 return 0;
             }
