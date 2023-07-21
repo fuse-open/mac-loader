@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-macOS</TargetFramework>
+    <TargetFramework>net6.0-macos</TargetFramework>
     <RootNamespace>Uno.AppLoader</RootNamespace>
     <AssemblyName>uno-app-loader</AssemblyName>
     <OutputType>Exe</OutputType>
