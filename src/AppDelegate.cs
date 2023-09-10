@@ -1,6 +1,5 @@
 using Foundation;
 using AppKit;
-using System.Linq;
 using CoreGraphics;
 using Uno.AppLoader.MonoMac;
 using Uno.Platform.Internal;

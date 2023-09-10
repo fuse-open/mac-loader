@@ -36,15 +36,11 @@ namespace Uno.AppLoader
         {
             // Set DllImportResolver for loading native libraries used in generated assemblies
             AppDomain.CurrentDomain.AssemblyLoad += (sender, ev) => {
-                var dir1 = Path.GetDirectoryName(ev.LoadedAssembly.Location);
-                var dir2 = Path.GetDirectoryName(assemblyPath);
-
-                // Skip assemblies not included in the build output
-                if (dir1 != dir2)
-                    return;
-
                 try
                 {
+                    if (!UsesUnoPInvoke(ev.LoadedAssembly))
+                        return;
+
                     NativeLibrary.SetDllImportResolver(ev.LoadedAssembly, (libraryName, assembly, searchPath) => {
                         if (!libraryName.Contains(".dll") || libraryName.StartsWith("/"))
                             return IntPtr.Zero;
@@ -66,9 +62,23 @@ namespace Uno.AppLoader
             };
 
             // Load the main generated assembly
-            var assembly = Assembly.LoadFile(assemblyPath);
+            var assembly = Assembly.LoadFrom(assemblyPath);
+            IO.Bundle.Initialize(assembly);
             var type = assembly.GetType(mainClass, true);
             return (Application)Activator.CreateInstance(type);
+        }
+
+        static bool UsesUnoPInvoke(Assembly asm)
+        {
+            foreach (var attr in asm.GetCustomAttributes())
+            {
+                var metadata = attr as AssemblyMetadataAttribute;
+
+                if (metadata?.Key == "Uno.DllImportResolver")
+                    return bool.Parse(metadata.Value);
+            }
+
+            return false;
         }
     }
 }
