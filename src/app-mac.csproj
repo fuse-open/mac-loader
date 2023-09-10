@@ -26,5 +26,6 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.1" />
     <PackageReference Include="OpenTK.macOS" Version="1.0.1" />
     <PackageReference Include="plist-cil" Version="2.2.0" />
+    <PackageReference Include="runtime.osx.10.10-x64.CoreCompat.System.Drawing" Version="6.0.5.128" />
   </ItemGroup>
 </Project>
