@@ -3,3 +3,5 @@
 /src/obj/
 /x64/
 /*.nupkg
+
+.DS_Store
